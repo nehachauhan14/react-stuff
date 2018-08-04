@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -50,22 +50,22 @@ togglesPersonsHandler = () => {
   this.setState({showPersons : !doesShow});
 }
   render() {
-    const style = {
-      backgroundColor: 'Green',
-      color : 'White', 
-      font:'inherit',
-      border:'1px solid blue',
-      padding: '8px',
-      cursor: 'pointer'
-    }    
+    // const style = {
+    //   backgroundColor: 'Green',
+    //   color : 'White', 
+    //   font:'inherit',
+    //   border:'1px solid blue',
+    //   padding: '8px',
+    //   cursor: 'pointer'
+    // }    
     let persons = null;
 
-    const classes = [];
+    const assignedClasses = [];
     if(this.state.persons.length <= 2){
-      classes.push('red');
+      assignedClasses.push(classes.red);
     }
     if(this.state.persons.length <= 1){
-      classes.push('bold');
+      assignedClasses.push(classes.bold);
     }
 
     if(this.state.showPersons){
@@ -86,20 +86,19 @@ togglesPersonsHandler = () => {
         </div>
       );
 
-      style.backgroundColor = "Red";
-      style[':hover'] = {
-        backgroundColor : 'salmon',
-        color : 'black'
-      }
+      // style.backgroundColor = "Red";
+      // style[':hover'] = {
+      //   backgroundColor : 'salmon',
+      //   color : 'black'
+      // }
     }
     
 
     return (
-      <div className="App">
+      <div className={classes.App}>
         <h1>Hi I'm a React App!</h1>
-        <p className={classes.join(' ')}> This is really working </p>
-        <button
-          style={style} 
+        <p className={assignedClasses.join(' ')}> This is really working </p>
+        <button 
           onClick={this.togglesPersonsHandler}>
           Toggle Persons
         </button>

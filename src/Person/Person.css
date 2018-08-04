@@ -6,3 +6,10 @@
     padding : 16px;
 
 }
+
+@media (min-width : 500px ){
+   .Person{
+    width : 450px;
+    border-color : red ;
+   }  
+} 

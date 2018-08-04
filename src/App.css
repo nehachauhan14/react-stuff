@@ -9,3 +9,16 @@
 .red{
   color : red ;
 }
+
+.App button {
+  border : 1px dashed greenyellow;
+  font : inherit;
+  background-color: blueviolet;
+  color : white;
+  padding : 16px;
+}
+
+.App button:hover {
+background-color : greenyellow ; 
+border-color: blueviolet; 
+}
