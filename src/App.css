@@ -22,3 +22,13 @@
 background-color : greenyellow ; 
 border-color: blueviolet; 
 }
+
+.App button.Red{
+  background-color : red;
+  color:black;
+}
+
+.App button.Red:hover{
+  background-color : greenyellow ; 
+  border-color: blueviolet; 
+}

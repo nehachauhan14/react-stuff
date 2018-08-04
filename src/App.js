@@ -59,6 +59,7 @@ togglesPersonsHandler = () => {
     //   cursor: 'pointer'
     // }    
     let persons = null;
+    let btnClass = '' ;
 
     const assignedClasses = [];
     if(this.state.persons.length <= 2){
@@ -85,6 +86,9 @@ togglesPersonsHandler = () => {
           }
         </div>
       );
+      btnClass = classes.Red;
+
+
 
       // style.backgroundColor = "Red";
       // style[':hover'] = {
@@ -99,6 +103,7 @@ togglesPersonsHandler = () => {
         <h1>Hi I'm a React App!</h1>
         <p className={assignedClasses.join(' ')}> This is really working </p>
         <button 
+          className = {btnClass}
           onClick={this.togglesPersonsHandler}>
           Toggle Persons
         </button>
