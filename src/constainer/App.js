@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.css';
-import Person from './Person/Person';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Persons from '../components/Persons/Persons';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
 
@@ -51,14 +51,6 @@ togglesPersonsHandler = () => {
   this.setState({showPersons : !doesShow});
 }
   render() {
-    // const style = {
-    //   backgroundColor: 'Green',
-    //   color : 'White', 
-    //   font:'inherit',
-    //   border:'1px solid blue',
-    //   padding: '8px',
-    //   cursor: 'pointer'
-    // }    
     let persons = null;
     let btnClass = '' ;
 
@@ -73,29 +65,15 @@ togglesPersonsHandler = () => {
     if(this.state.showPersons){
       persons = (
         <div>
-          {
-            this.state.persons.map((person,index) => {
-              return <Person 
-              name = {person.name} 
-              age={person.age}
-              click={() => this.deletePersonHandler(index)}
-              changed = {(event)=>this.nameChangeHandler(event , person.id)}
-              key={person.id}
-              > 
-            </Person> 
-            })
-          }
+          <Persons
+            persons={this.state.persons}
+            clicked={this.deletePersonHandler}
+            changed={this.nameChangeHandler} 
+          >
+          </Persons>
         </div>
       );
       btnClass = classes.Red;
-
-
-
-      // style.backgroundColor = "Red";
-      // style[':hover'] = {
-      //   backgroundColor : 'salmon',
-      //   color : 'black'
-      // }
     }
     
 
