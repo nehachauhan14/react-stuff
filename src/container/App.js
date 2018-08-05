@@ -75,7 +75,6 @@ togglesPersonsHandler = () => {
       );
     }
     
-
     return (
       <div className={classes.App}>
         <Cockpit
