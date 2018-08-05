@@ -6,6 +6,19 @@ import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
 
+  constructor(props){  
+    super(props);
+    console.log("[App.js] in Constructor", props);
+  }
+
+  componentWillMount(){
+    console.log("[App.js] in ComponentWillMount");
+  }
+
+  componentDidMount(){
+    console.log("[App.js] in ComponentDidMount")
+  }
+
   state = {
     persons : [
       {id : 'wrwerw', name:'Neha' , age: 26} , 
@@ -52,6 +65,7 @@ togglesPersonsHandler = () => {
   this.setState({showPersons : !doesShow});
 }
   render() {
+    console.log("[App.js] in render");
     let persons = null;
     const assignedClasses = [];
 
