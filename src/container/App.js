@@ -78,6 +78,7 @@ togglesPersonsHandler = () => {
     return (
       <div className={classes.App}>
         <Cockpit
+           appTitle = {this.props.appTitle}
            persons = {this.state.persons}
            showPersons = {this.state.showPersons}
            clicked={this.togglesPersonsHandler}
