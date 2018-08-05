@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
 
@@ -52,9 +53,8 @@ togglesPersonsHandler = () => {
 }
   render() {
     let persons = null;
-    let btnClass = '' ;
-
     const assignedClasses = [];
+
     if(this.state.persons.length <= 2){
       assignedClasses.push(classes.red);
     }
@@ -73,19 +73,16 @@ togglesPersonsHandler = () => {
           </Persons>
         </div>
       );
-      btnClass = classes.Red;
     }
     
 
     return (
       <div className={classes.App}>
-        <h1>Hi I'm a React App!</h1>
-        <p className={assignedClasses.join(' ')}> This is really working </p>
-        <button 
-          className = {btnClass}
-          onClick={this.togglesPersonsHandler}>
-          Toggle Persons
-        </button>
+        <Cockpit
+           persons = {this.state.persons}
+           showPersons = {this.state.showPersons}
+           clicked={this.togglesPersonsHandler}
+        />
         {persons}
       </div>
     );
